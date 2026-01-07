@@ -3,8 +3,6 @@ from http.server import BaseHTTPRequestHandler
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
-        self.send_header('Content-type', 'text/plain')
+        self.send_header('Content-type', 'text/plain; charset=utf-8')
         self.end_headers()
-        self.wfile.write('Hello from Vercel Serverless Python!'.encode('utf-8'))
-        self.wfile.write('\n I am Golden Chen!'.encode('utf-8'))
-        return
+        self.wfile.write("你好！這是從 Python 微服務傳回的訊息。".encode('utf-8'))
